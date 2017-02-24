@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Shaap</string>
+
+    <string name="action_settings">راهنمای علایم</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="no_interne_connection">دسترسی به اینترنت وجود ندارد</string>
+    <string name="ask_location_permission_message">برای استفاده از این قسمت نیاز است تا به برنامه اجازه استفاده از موقعیت یاب داده شود</string>
+    <string name="ok">باشه</string>
+    <string name="no">نمیخواهم</string>
+    <string name="gps_not_on_dialog_title">جی پی اس غیر فعال است</string>
+    <string name="gps_not_on_dialog_ask">لطفا جی پی اس دستگاه را روشن کنید</string>
+    <string name="leftComment">نظر دهید</string>
+    <string name="tarakonesh_not_success">تراکنش ناموفق</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="pleaseWait">لطفا صبر کنید</string>
+
+</resources>

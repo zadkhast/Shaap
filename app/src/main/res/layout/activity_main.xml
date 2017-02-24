@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- created by sorush -->
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:contentInsetLeft="0dp"
+    android:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetEnd="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetEnd="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_back_color"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/toolbar"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/primary"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/logo3"
+                        android:padding="5dp"
+                        android:background="@drawable/circle_shape"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="48dp"
+                android:layout_marginTop="?attr/actionBarSize">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="categoryClick"
+                        android:padding="5dp">
+
+
+                        <com.android.shaap.Tools.Sorush.PersianTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="دسته بندی ها"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/cat_title"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true" />
+
+                        <com.android.shaap.Tools.Sorush.PersianTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="همه"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/show_all_cat_title"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true" />
+
+                    </RelativeLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
+
+                            <ImageView
+                                android:layout_width="170dp"
+                                android:layout_height="170dp"
+                                android:id="@+id/map_cat"
+                                android:background="@color/white"
+                                android:layout_marginRight="10dp"
+                                android:layout_gravity="center_vertical"
+                                android:elevation="10dp"
+                                android:src="@drawable/tabligh"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat1"
+                                        android:src="@drawable/darsi"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="2dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat2"
+                                        android:src="@drawable/car"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat3"
+                                        android:padding="10dp"
+                                        android:src="@drawable/zangiree"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat4"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/daroo"
+                                        android:padding="10dp"
+                                        android:elevation="5dp"/>
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:scrollbarStyle="insideOverlay">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat5"
+                                        android:src="@drawable/khoraki"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat6"
+                                        android:src="@drawable/resturant"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat7"
+                                        android:src="@drawable/pooshak"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:id="@+id/cat8"
+                                        android:src="@drawable/varzesh"
+                                        android:padding="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitXY"
+                                        android:elevation="5dp"/>
+
+
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </HorizontalScrollView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:onClick="hesabdariClick"
+                        android:padding="5dp"
+                        >
+
+                        <com.android.shaap.Tools.Sorush.PersianTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="حسابداری"
+                            android:layout_marginRight="10dp"
+                            android:textSize="20sp"/>
+
+                        <com.android.shaap.Tools.Sorush.PersianTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="همه"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/show_all_transaction_title"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true" />
+
+                    </RelativeLayout>
+
+                    <include layout="@layout/main_recycle"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="5dp">
+
+                        <com.android.shaap.Tools.Sorush.PersianTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="خدمات پرداخت"
+                            android:layout_marginRight="10dp"
+                            android:textSize="20sp"/>
+
+                    </RelativeLayout>
+
+                    <include layout="@layout/main_recycle_payment"/>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:id="@+id/toolbar_bottom"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                android:contentInsetRight="0dp"
+                android:contentInsetEnd="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetEnd="0dp"
+                android:layout_alignParentBottom="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/rel"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/primary">
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:id="@+id/linearLayout">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_my_location_white_36dp"
+                            android:onClick="nearMeClick"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_account_white_36dp"
+                            android:padding="4dp"
+                            android:onClick="profileClick"/>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0dp">
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:onClick="taraKoneshClick"
+                        android:background="@drawable/bottom_toolbar_circle_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:layout_gravity="center"
+                            android:text="تراکنش ها" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

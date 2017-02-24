@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/lin_main"
+            android:padding="10dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/nameOfShopperTX"
+                        android:padding="2dp"
+                        android:gravity="right"
+                        android:text="فروشگاه زنجیره ای رفاه"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/costTX"
+                        android:padding="2dp"
+                        android:text="27000"
+                        android:gravity="right"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/dateTX"
+                        android:padding="2dp"
+                        android:text="95/11/22"
+                        android:gravity="right"/>
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:id="@+id/bankLogo"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/bank_logo"
+                    android:layout_weight="0"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/linNoMain"
+                android:orientation="horizontal"
+                android:background="@color/primary_light"
+                android:layout_gravity="bottom">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/catImageView"
+                    android:src="@drawable/ic_local_dining_black_18dp"
+                    android:scaleType="centerInside"
+                    android:alpha="0.5"
+                    android:padding="2dp"
+                    android:layout_margin="5dp"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_back_color"
+                    android:alpha="0.5"
+                    android:layout_margin="2dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/sendCommentLIN">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="نظردهید"
+                        android:id="@+id/sendCommentTX"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_back_color"
+                    android:alpha="0.5"
+                    android:layout_margin="2dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/howPayImageView"
+                    android:src="@drawable/ic_smartphone_black_18dp"
+                    android:scaleType="centerInside"
+                    android:alpha="0.5"
+                    android:padding="2dp"
+                    android:layout_margin="5dp"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

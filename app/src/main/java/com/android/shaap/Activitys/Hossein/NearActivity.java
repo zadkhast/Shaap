@@ -48,12 +48,9 @@ public class NearActivity extends AppCompatActivity  {
     TextView text;
 
     private TrackGPS gps;
-    double longitude = 0;
-    double latitude = 0;
 
     CheckNetworkConnectivity checkNetworkConnectivity;
 
-    private Handler handler;
     static LatLng latLng;
 
     Dialog noConnectionDialogBox;
@@ -90,6 +87,7 @@ public class NearActivity extends AppCompatActivity  {
 
 
 
+        // setup recyclerView for bottom sheet
         setupContentOfBottomSheet();
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -98,8 +96,10 @@ public class NearActivity extends AppCompatActivity  {
 
 
         adapter = new BottomSheetRecAdapter(this, bottomSheetItemsList);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);// set adapter for bottom sheet
 
+
+        // if items of bottom sheet recyclerView click
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
@@ -110,10 +110,12 @@ public class NearActivity extends AppCompatActivity  {
                         resturanLocationsList.add(new LatLng(35.687470, 51.372411));
                         resturanLocationsList.add(new LatLng(35.686450, 51.373527));
 
+
+                  // show list of near restuarant
                         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                     ft.replace(R.id.your_placeholder, new NearListViewFragment());
+                    ft.commit();
 
-                    ft.commit(); // show list of near restuarant
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     text.setText("نزدیک ترین رستوران ها");
                     fab.setImageResource(R.drawable.ic_location_on_white_18dp); // set fab icon to show all of this list to map
@@ -286,56 +288,11 @@ public class NearActivity extends AppCompatActivity  {
 
 
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        this.finish();
-    }
-
-    public void getUserLocation() {
-
-        Log.d("getUserLocation" , "F");
-        gps = new TrackGPS(NearActivity.this);
-        if (gps.canGetLocation()) {
-
-            func(0);
-            fab.setImageResource(R.drawable.ic_my_location_white_36dp);
-
-        } else {
-          //  gps.showSettingsAlert();
-            fab.setImageResource(R.drawable.ic_location_disabled_white_18dp);
-        }
-
-    }
-
-    public void getUserLocationWithClickUpdate() {
-
-        gps = new TrackGPS(NearActivity.this);
-        if (gps.canGetLocation()) {
-
-            func(0);
-            fab.setImageResource(R.drawable.ic_my_location_white_36dp);
 
 
-        } else {
-            gps.showSettingsAlert();
-            fab.setImageResource(R.drawable.ic_location_disabled_white_18dp);
-        }
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-        if(shouldExecuteOnResume){
-            Log.d("resume" , "ok");
-            Log.d("getUserLocation" , "R");
-            func(2);
-        } else{
-            shouldExecuteOnResume = true;
-        }
 
-    }
 
 
 
@@ -373,38 +330,37 @@ public class NearActivity extends AppCompatActivity  {
     }
 
     private void func(int i) {
+        text.setText("مکان شما"); // set toolbar text
+        fabState = "userLocation";
         progress = new ProgressDialog(this);
-        gps = new TrackGPS(NearActivity.this);
+        gps = new TrackGPS(this);
+        latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
         if (gps.canGetLocation()) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            if (i == 0) {
-                ft.replace(R.id.your_placeholder, new MapFragment(resturanLocationsList));
-                ft.commit();
-            }
 
             if (i == 2) {
 
                 progress.setMessage("لطفا صبر کنید");
                 progress.show();
                 fab.setImageResource(R.drawable.ic_my_location_white_36dp);
-            }
-        } else {
+            } // end if(i == 2)
+        } // end if(canGetLocation)
+        else { // else cantGetLocation
             if (i == 1) {
                 gps.showSettingsAlert();
             }
             fab.setImageResource(R.drawable.ic_location_disabled_white_18dp);
-        }
+        } // end else cantGetLocation
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        gps = new TrackGPS(this);
-        latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
+
 
         resturanLocationsList = new ArrayList<>();
         resturanLocationsList.add(latLng);
 
 
-        text.setText("مکان شما"); // set toolbar text
-        fabState = "userLocation";
+
         if (i == 0) {
             ft.replace(R.id.your_placeholder, new MapFragment(resturanLocationsList));
             ft.commit();
@@ -417,6 +373,26 @@ public class NearActivity extends AppCompatActivity  {
     protected void onDestroy() {
         super.onDestroy();
         this.finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(shouldExecuteOnResume){
+            Log.d("resume" , "ok");
+            Log.d("getUserLocation" , "R");
+            func(2);
+        } else{
+            shouldExecuteOnResume = true;
+        }
+
     }
 
 

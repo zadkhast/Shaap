@@ -145,7 +145,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         if (lat == 0 && lng == 0) {
             mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(35.700443, 51.337359)));
             CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(35.700443, 51.337359)).zoom(16).build();
-
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         } else {
             latLng = new LatLng(lat,lng);
